@@ -1,0 +1,24 @@
+{
+  "name": "desafio-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gasparjrebord/backend-class.git"
+  },
+  "keywords": [],
+  "author": "Gaspar J. Rebord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gasparjrebord/backend-class/issues"
+  },
+  "homepage": "https://github.com/gasparjrebord/backend-class#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
