@@ -39,7 +39,7 @@ Realizar un proyecto de servidor basado en node.js y express que ofrezca una API
 
 ## Para probar API puedes realizar lo siguiente
 
-1. Estar en el directorio de **'Entrega-4'**
+1. Estar en el directorio de **'desafio-4'**
 
 2. Instalar dependencias con: `npm install`
 
@@ -47,12 +47,12 @@ Realizar un proyecto de servidor basado en node.js y express que ofrezca una API
 
 ---
 
-### `GET | http://localhost:8080/api/productos`
+### `GET | http://localhost:8080/api/products`
 
-### `GET | http://localhost:8080/api/productos/:id`
+### `GET | http://localhost:8080/api/products/:id`
 
-### `POST | http://localhost:8080/api/productos`
+### `POST | http://localhost:8080/api/products`
 
-### `PUT | http://localhost:8080/api/productos/:id`
+### `PUT | http://localhost:8080/api/products/:id`
 
-### `DELETE | http://localhost:8080/api/productos/:id`
+### `DELETE | http://localhost:8080/api/products/:id`
