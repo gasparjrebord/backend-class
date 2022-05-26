@@ -6,11 +6,11 @@
 
 Realizar un proyecto de servidor basado en node.js y express que ofrezca una API RESTful de productos. En detalle, que incorpore las siguientes rutas:
 
-- **GET** _/api/productos_ -> devuelve todos los productos.
-- **GET** _/api/productos/:id_ -> devuelve un producto según su id.
-- **POST** _/api/productos_ -> recibe y agrega un producto, y lo devuelve con su id asignado.
-- **PUT** _/api/productos/:id_ -> recibe y actualiza un producto según su id.
-- **DELETE** _/api/productos/:id_ -> elimina un producto según su id.
+- **GET** _/api/products_ -> devuelve todos los productos.
+- **GET** _/api/products/:id_ -> devuelve un producto según su id.
+- **POST** _/api/products_ -> recibe y agrega un producto, y lo devuelve con su id asignado.
+- **PUT** _/api/products/:id_ -> recibe y actualiza un producto según su id.
+- **DELETE** _/api/products/:id_ -> elimina un producto según su id.
 
 - Cada producto estará representado por un objecto con el siguiente formato
 

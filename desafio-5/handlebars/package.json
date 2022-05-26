@@ -1,0 +1,26 @@
+{
+  "name": "handlebars",
+  "version": "1.0.0",
+  "description": "handlebars-engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "server": "nodemon --inspect ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gasparjrebord/backend-class.git"
+  },
+  "author": "Gaspar J. Rebord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gasparjrebord/backend-class/issues"
+  },
+  "homepage": "https://github.com/gasparjrebord/backend-class#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-router": "^0.0.1"
+  }
+}

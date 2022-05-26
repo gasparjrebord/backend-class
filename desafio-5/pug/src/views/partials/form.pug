@@ -1,0 +1,9 @@
+ h2 Agregar Producto
+    form(action='/products' method='POST')
+      label(for='title') Título:
+      input(type='text' name='title' required='')
+      label(for='price') Precio:
+      input(type='text' name='price' required='')
+      label(for='thumbnail') Thumbnail:
+      input(type='text' name='thumbnail' required='')
+      button(type='submit') Agregar producto a la lista

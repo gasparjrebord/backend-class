@@ -97,7 +97,6 @@ class Container {
                 const index = data.indexOf(objectIdToBeRemoved);
                 data.splice(index, 1);
                 await fs.promises.writeFile(this.fileName, JSON.stringify(data));
-                return true;
             } else {
                 console.log(`ID ${id} does not exist in the file`);
                 return null;

@@ -1,0 +1,25 @@
+{
+  "name": "ejs",
+  "version": "1.0.0",
+  "description": "Desafio Ejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "server": "nodemon --inspect ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gasparjrebord/backend-class.git"
+  },
+  "author": "Gaspar J. Rebord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gasparjrebord/backend-class/issues"
+  },
+  "homepage": "https://github.com/gasparjrebord/backend-class#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
