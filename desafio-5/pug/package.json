@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js",
-    "server": "nodemon --inspect ./src/index.js"
+    "start": "node ./src/server.js",
+    "server": "nodemon --inspect ./src/server.js"
   },
   "author": "Gaspar J. Rebord",
   "license": "ISC",

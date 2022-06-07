@@ -1,4 +1,5 @@
 const express = require('express');
+const { engine } = require('express-handlebars');
 const Container = require('./container');
 const container = new Container("products.json");
 const app = express();
@@ -11,15 +12,21 @@ app.use(express.urlencoded({extended:true}));
 app.use('/products', router);
 
 
-app.set('views', './views');
-app.set('view engine', 'pug');
+app.set('views', './src/views');
+app.set('view engine', 'hbs');
 
+app.engine('hbs', engine({
+    extname: '.hbs',
+    defaultLayout: 'index.hbs',
+    layoutsDir: __dirname + '/views/layouts',
+    partialsDir: __dirname + '/views/partials'
+}))
 
-router.get('/', (req,res) => {
+router.get('/form', (req,res) => {
     res.status(200).render('partials/form', {})
 })
 
-router.get('/', async (req, res) => {
+router.get('/list', async (req, res) => {
     const products = await container.getAll();
     res.status(200).render('partials/list', {products: products})
 })
@@ -40,7 +47,7 @@ router.post('/', async (req, res) => {
     const {body} = req;
     const newProductId = await container.save(body);
     res.status(200)
-       .redirect('/')
+       .redirect('/products/list')
        .send(`Producto agregado con el ID: ${newProductId}`);
 })
 

@@ -1,5 +1,4 @@
 const express = require('express');
-const { engine } = require('express-handlebars');
 const Container = require('./container');
 const container = new Container("products.json");
 const app = express();
@@ -12,23 +11,17 @@ app.use(express.urlencoded({extended:true}));
 app.use('/products', router);
 
 
-app.set('views', './views');
-app.set('view engine', 'hbs');
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
 
-app.engine('hbs', engine({
-    extname: '.hbs',
-    defaultLayout: 'index.hbs',
-    layoutsDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views/partials'
-}));
 
-router.get('/', (req,res) => {
-    res.status(200).render('partials/form', {})
+router.get('/form', (req,res) => {
+    res.status(200).render('form', {})
 })
 
-router.get('/', async (req, res) => {
+router.get('/list', async (req, res) => {
     const products = await container.getAll();
-    res.status(200).render('partials/list', {products: products})
+    res.status(200).render('list', {products: products})
 })
 
 
@@ -47,7 +40,7 @@ router.post('/', async (req, res) => {
     const {body} = req;
     const newProductId = await container.save(body);
     res.status(200)
-       .redirect('/')
+       .redirect('/products/list')
        .send(`Producto agregado con el ID: ${newProductId}`);
 })
 
@@ -75,7 +68,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-const PORT = 8080;
+const PORT = 4545;
 const server = app.listen(PORT, () => {
 console.log(` >>>>> Server started at http://localhost:${PORT}`)
 })
