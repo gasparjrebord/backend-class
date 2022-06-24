@@ -10,8 +10,8 @@ const httpServer = new HttpServer(app);
 const socketServer = new SocketServer(httpServer);
 
 const Container = require('./container');
-const productsContainer = new Container("products.json");
-const chatContainer = new Container("chat.json");
+const product = new Container("products.json");
+const chat = new Container("chat.json");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -32,48 +32,48 @@ app.engine('hbs', engine({
 
 socketServer.on('connection', async(socket) => {
 
-    console.log('🟢 User connected')
+    console.log('🟢Connected')
     
-    const products = await productsContainer.getAll();
-    socket.emit('productsList', products )
+    const products = await product.getAll();
+    socket.emit('products', products )
     
-    const messages = await chatContainer.getAll();
-    socket.emit('messagesList', messages)
+    const messages = await chat.getAll();
+    socket.emit('messages', messages)
 
 
     socket.on('newProduct', async(data) => {
 
-        await productsContainer.save(data);
+        await products.save(data);
         
-        const products = await productsContainer.getAll();
-        socketServer.sockets.emit('productsUpdate', products);
+        const products = await product.getAll();
+        socketServer.sockets.emit('products', products);
     })
     
     socket.on('newMessage', async(data) => {
-        await chatContainer.save(data);
+        await chat.save(data);
         
-        const messages = await chatContainer.getAll();
-        socketServer.sockets.emit('messagesUpdate', messages);
+        const messages = await chat.getAll();
+        socketServer.sockets.emit('messages', messages);
     });
 
 
     socket.on('disconnect', () => {
-        console.log('🔴User disconnected')
+        console.log('🔴Disconnected')
     })
 
 });
 
 
 router.get('/', async (req, res) => {
-    const messages = await chatContainer.getAll();
-    const products = await productsContainer.getAll();
+    const messages = await chat.getAll();
+    const products = await product.getAll();
     res.status(200).render('layouts/index', {products: products, messages: messages})
 })
 
 
 router.get('/products/:id', async (req, res) => {
     const {id} = req.params;
-    const product = await productsContainer.getById(id);
+    const product = await product.getById(id);
     if (product) {
         res.status(200).json(product)
     } else {
@@ -81,26 +81,20 @@ router.get('/products/:id', async (req, res) => {
     } 
 })
 
-router.post('/chat', async (req, res) => {
+
+router.post('/', async (req, res) => {
     const {body} = req;
-    await chatContainer.save(body);
+    const newProductId = await product.save(body);
     res.status(200)
        .redirect('/api')
-})
-
-
-router.post('/products', async (req, res) => {
-    const {body} = req;
-    await productsContainer.save(body);
-    res.status(200)
-       .redirect('/api')
+       .send(`Producto agregado con el ID: ${newProductId}`);
 })
 
 
 router.put('/:id', async (req, res) => {
     const {id} = req.params;
     const {body} = req;
-    const wasUpdated = await productsContainer.updateById(id, body);
+    const wasUpdated = await product.updateById(id, body);
     if (wasUpdated) {
         res.status(200).send(`El producto de ID: ${id} fue actualizado`)
     } else {
@@ -111,7 +105,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     const {id} = req.params;
-    const wasDeleted = await productsContainer.deleteById(id);
+    const wasDeleted = await product.deleteById(id);
     if (wasDeleted) {
         res.status(200).send(`El producto de ID: ${id} fue borrado`)
     } else {

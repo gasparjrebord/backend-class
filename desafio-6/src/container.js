@@ -32,12 +32,13 @@ class Container {
     async save(body) {
         try {
             const data = await this.readFile();
+            const newProduct = body;
             
-            body.id = data[data.length -1].id + 1;
-            data.push(body);
+            newProduct.id = data[data.length -1].id + 1;
+            data.push(newProduct);
 
             await fs.promises.writeFile(this.fileName, JSON.stringify(data));
-            return body.id;
+            return newProduct.id;
         } catch (error) {
             console.log(`Error Code: ${error} | There was an error when trying to save an element`);
         }
@@ -70,8 +71,8 @@ class Container {
       }
 
     async getById(id) {
-        id = Number(id);
         try {
+            id = Number(id);
             const data = await this.readFile();
             return data.find((product) => product.id === id);
         } catch (error) {

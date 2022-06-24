@@ -1,38 +1,12 @@
 const socket = io();
 
 
-const render = async (path, target) => {
-    try {
-      const data = await fetch(path);
-      const parsed = await data.text();
-      target.innerHTML = parsed;
-    } catch (error) {console.error(error)}
-};
-
-socket.on("productsList", async (data) => {
-    await render("/products", products);
-});
-socket.on("productsUpdate", async (data) => {
-    await render("/products", products);
-});
-socket.on("messagesList", async (data) => {
-    await render("/chat", chat)
-})
-socket.on("messagesUpdate", async (data) => {
-    await render("/chat", chat)
-})
-
-
 const sendMessage = () => {
     const email = document.getElementById("email-field").value;
     const text = document.getElementById("text-field").value;
-    const date = new Date().toLocaleString();
-
-    const msg = { email, text, date };
-
-    if (email !== '' && text !== '') {
-        socket.emit('newMessage', msg);
-    }
+    const msg = { email, text, date: new Date().toLocaleString()};
+    socket.emit('newMessage', msg);
+    return false;
 }
 
 const addProduct = () => {
@@ -40,10 +14,8 @@ const addProduct = () => {
     const price = document.getElementById("price-field").value;
     const thumbnail = document.getElementById("thumbnail-field").value;
     const product = { title, price, thumbnail};
-
-    if (title !== '' && price !== '' && thumbnail !== '') {
-        socket.emit('newProduct', product);
-    }
+    socket.emit('newProduct', product);
+    return false;
 }
 
 /*
