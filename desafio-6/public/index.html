@@ -4,19 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio-6</title>
+    <link rel="stylesheet" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="main.js"></script>
+    <title>Desafio-6</title>
 </head>
 <body>
+    <nav>
+        <div>
+            <ul>
+                <li>
+                    <a href="/">Formulario</a>
+                </li>
+                <li>
+                    <a href="/products">Productos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+        <div>
+            <form id="product_form">
+                <h2>Nuevo producto</h2>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Nombre"
+                    required
+                />
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Precio"
+                    required
+                />
+                <input
+                    type="url"
+                    id="thumbnail"
+                    placeholder="URL imagen"
+                    required
+                />
+                <div>
+                    <input
+                    type="submit"
+                    value="Agregar producto"
+                    />
+                </div>
+            </form>
+        </div>
 
-    <div id="messages"></div>
+        <div id="products">
 
-    <form onsubmit="return sendMessage()">
-        <input type="email" id="email">
-        <input type="text" id="text">
-        <button type="submit">Send</button>
-    </form>
+        </div>
 
-</body>
+        <div>
+            <form id="chat_form">
+                <h2>Chat</h2>
+                <label for="email">Ingrese su email:</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                />
+                <input
+                    type="text"
+                    id="message"
+                    placeholder="Mensaje"
+                    required
+                />
+                <input type="submit" value="Enviar mensaje">
+            </form>
+
+            <div id="chat">
+
+            </div>
+        </div>
+    </body>
 </html>
