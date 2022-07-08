@@ -1,0 +1,31 @@
+.messages {
+    height: 400px;
+    overflow-x: scroll;
+    margin-top: 1rem;
+    box-shadow: 0 0 10px lightgrey;
+    border-radius: .5rem;
+    padding: 2rem 1rem;
+
+}
+#email {
+    max-width: 400px;
+}
+.wrapper {
+    box-shadow: 0 0 10px lightgrey;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+.avatar {
+    max-height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+
+.messages .container {
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.messages .container p {
+    font-size: 0.9rem;
+}
