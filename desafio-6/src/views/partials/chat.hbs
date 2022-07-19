@@ -1,0 +1,15 @@
+{{#if messages}}
+    <div class="productList">
+            {{#each messages}}
+                <div>
+                    <strong>{{this.email}}</strong>
+                    <em>{{this.text}}</em>
+                    <em>{{this.date}}</em>
+                </div>
+            {{/each}}
+        </tbody>
+        </table>
+    </div>
+{{else}}
+<h2>No hay mensajes</h2>
+{{/if}}
