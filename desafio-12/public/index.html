@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	<link rel="stylesheet" href="style.css" />
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+	<title>desafio-12</title>
+  </head>
+  <body>
+	<nav class="navbar">
+	  <div>
+		<h1 id="welcomeBar"></h1>
+		<ul>
+		  <li>
+			<a href="/">Formulario</a>
+		  </li>
+		  <li>
+			<a href="/api/products-test">Productos</a>
+		  </li>
+		  <li>
+			<a id="btnLogout">Cerrar sesion</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	<div id="productsContainer">
+	  <form id="productForm">
+		<h2>Añadir producto</h2>
+		<input
+		  type="text"
+		  id="title"
+		  placeholder="Nombre"
+		  required
+		/>
+		<input
+		  type="number"
+		  id="price"
+		  placeholder="Precio"
+		  required
+		/>
+		<input
+		  type="url"
+		  id="thumbnail"
+		  placeholder="URL imagen"
+		  required
+		/>
+		<div>
+		  <input class="btn"
+			type="submit"
+			value="Agregar producto"
+		  />
+		</div>
+	  </form>
+	  <div id="products">
+	  </div>
+	</div>
+
+
+	<div id="chatContainer">
+	  <form id="chatForm">
+		<h2 id="chatTitle">Chat</h2>
+		<input
+		  type="email"
+		  id="email"
+		  placeholder="Email"
+		  required
+		/>
+		<input
+		  type="text"
+		  id="name"
+		  placeholder="Nombre"
+		  required
+		/>
+		<input
+		  type="text"
+		  id="lastname"
+		  placeholder="Apellido"
+		  required
+		/>
+		<input
+		  type="text"
+		  id="age"
+		  placeholder="Edad"
+		  required
+		/>
+		<input
+		  type="text"
+		  id="nickname"
+		  placeholder="Alias"
+		  required
+		/>
+		<input
+		  type="url"
+		  id="authorImage"
+		  placeholder="Imagen de perfil"
+		  required
+		/>
+		<input
+		  type="text"
+		  id="message"
+		  placeholder="Mensaje"
+		  required
+		/>
+		<input class="btn"
+		type="submit" 
+		value="Enviar mensaje" 
+		/>
+	  </form>
+	  <div id="chat">
+		
+	  </div>
+	</div>
+	<script src="./app.js"></script>
+  </body>
+</html>
