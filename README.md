@@ -21,8 +21,7 @@
 #### [ Desafio 10 - Segunda entrega del proyecto final](https://github.com/gasparjrebord/backend-class/tree/master/desafio-10#readme)
 
 #### [ Desafio 11 - Mocks y normalización](https://github.com/gasparjrebord/backend-class/tree/master/desafio-11#readme)
-<<<<<<< HEAD
 
 #### [ Desafio 12 - Log-in por formulario](https://github.com/gasparjrebord/backend-class/tree/master/desafio-12#readme)
-=======
->>>>>>> 0363f528e56fa11a4925f87e0ae467a18347007b
+
+#### [ Desafio 13 - Inicio de sesion](https://github.com/gasparjrebord/backend-class/tree/master/desafio-13#readme)

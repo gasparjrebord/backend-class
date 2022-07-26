@@ -1,0 +1,12 @@
+<div class="messages">
+  {{#if messages}}
+    {{#each messages}}
+      <div>
+        <img class="authorImage" src={{author.authorImage}}>
+        <p>
+          <b>{{author.nickname}}</b> [{{timestamp}}] : <em>{{text}}</em>
+        </p>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
