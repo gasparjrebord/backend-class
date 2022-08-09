@@ -8,13 +8,14 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
 const { fork } = require('child_process');
-const randomNumberFork = fork('./src/utils/randomNum.js')
+const randomNumberFork = fork('./utils/randomNum.js')
 const { isLoggedIn  } = require("./middlewares/login");
 const { info } = require('./utils/info');
 const chatDao = require('./daos/chatDao');
 const productDao = require('./daos/productDao');
 const normalizedChats = require('./utils/normalizr');
 const sessionRouter = require("./routes/session");
+const PORT = process.env.PORT || Number(process.argv[2]) || 8080;
 const app = express();
 const httpServer = new HttpServer(app);
 const socketServer = new SocketServer(httpServer);
@@ -73,8 +74,8 @@ socketServer.on('connection', async (socket) => {
     });
 });
 
-const server = httpServer.listen(config.PORT, () => {
-console.log(`>>>>>Server started at http://localhost:${config.PORT}`)
+const server = httpServer.listen(PORT, () => {
+console.log(`>>>>>Server started at http://localhost:${PORT}`)
 });
 
 server.on('error', (err) => console.log(err));

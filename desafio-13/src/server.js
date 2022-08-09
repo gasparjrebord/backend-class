@@ -34,8 +34,8 @@ app.use(session({
         }),
         cookie: {maxAge: 600000} //10 min.
 }));
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', isLoggedIn);
 
