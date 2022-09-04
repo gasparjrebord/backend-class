@@ -30,6 +30,6 @@
 
 #### [ Desafio 15 - Servidor con balance de carga](https://github.com/gasparjrebord/backend-class/tree/master/desafio-15#readme)
 
-#### [ Desafio 16 - Desplegar nuestro proyecto en la nube](https://github.com/gasparjrebord/backend-class/tree/master/desafio-16#readme)
+#### [ Desafio 16 - Loggers, gzip y analisis de performance](https://github.com/gasparjrebord/backend-class/tree/master/desafio-16#readme)
 
-#### [ Desafio 17 - Tercera entrega del proyecto final](https://github.com/gasparjrebord/backend-class/tree/master/desafio-17#readme)
+#### [ Desafio 17 - Desplegar nuestro proyecto en la nube](https://github.com/gasparjrebord/backend-class/tree/master/desafio-17#readme)

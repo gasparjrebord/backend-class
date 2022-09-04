@@ -25,9 +25,9 @@ Incluir también un pequeño documento en donde se detallen los comandos que deb
 
 Ejemplo:
 
-- pm2 start ./miservidor.js -- --port=8080 --modo=fork
-- pm2 start ./miservidor.js -- --port=8081 --modo=cluster
-- pm2 start ./miservidor.js -- --port=8082 --modo=fork
+- pm2 start src/server.js -- --port=8080 --mode=fork
+- pm2 start src/server.js -- --port=8081 --mode=cluster
+- pm2 start src/server.js -- --port=8082 --mode=fork
 
 # Nodemon:
 
