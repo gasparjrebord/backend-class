@@ -25,3 +25,11 @@
 #### [ Desafio 12 - Log-in por formulario](https://github.com/gasparjrebord/backend-class/tree/master/desafio-12#readme)
 
 #### [ Desafio 13 - Inicio de sesion](https://github.com/gasparjrebord/backend-class/tree/master/desafio-13#readme)
+
+#### [ Desafio 14 - Usando el objeto process](https://github.com/gasparjrebord/backend-class/tree/master/desafio-14#readme)
+
+#### [ Desafio 15 - Servidor con balance de carga](https://github.com/gasparjrebord/backend-class/tree/master/desafio-15#readme)
+
+#### [ Desafio 16 - Desplegar nuestro proyecto en la nube](https://github.com/gasparjrebord/backend-class/tree/master/desafio-16#readme)
+
+#### [ Desafio 17 - Tercera entrega del proyecto final](https://github.com/gasparjrebord/backend-class/tree/master/desafio-17#readme)
